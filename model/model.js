@@ -1,0 +1,15 @@
+const mongoose =require("mongoose");
+mongoose.connect("mongodb://localhost:27017/multer")
+.then(()=>{
+    console.log("Connected to MongoDB");
+    
+})
+.catch((error)=>{
+    console.error("Connetion error:",error);
+    
+});
+userSchema= new mongoose.Schema({
+    name:String,
+    file:String,
+});
+module.exports=mongoose.model("User",userSchema);
